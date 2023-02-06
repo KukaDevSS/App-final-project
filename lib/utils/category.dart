@@ -12,20 +12,20 @@ class CategoryMenu extends StatelessWidget {
       height: 50,
       width: 130,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        // border: Border.all(color: Colors.deepPurple)),
-        color: Colors.indigo[600],
-      ),
+          borderRadius: BorderRadius.circular(5),
+          // border: Border.all(color: Colors.deepPurple)),
+          // color: Colors.indigo[600],
+          border: Border.all(color: Colors.indigo, width: 2)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons,
-            color: Colors.white,
+            color: Colors.indigo,
           ),
           Text(
             categoryName,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.indigo),
           ),
         ],
       ),

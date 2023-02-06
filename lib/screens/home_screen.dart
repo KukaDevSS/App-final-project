@@ -27,7 +27,10 @@ class _HomeScreensState extends State<HomeScreens> {
       drawer: DrawerSide(),
       appBar: AppBar(
         // shadowColor: Colors.black,
+        title: Text('ໜ້າຫຼັກ'),
+        centerTitle: true,
         backgroundColor: Colors.indigo[600],
+        // backgroundColor: Color.fromRGBO(134, 60, 208, 100),
         leading: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Builder(builder: (context) {
@@ -74,7 +77,7 @@ class _HomeScreensState extends State<HomeScreens> {
                     ),
                     // Category menu
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -88,14 +91,23 @@ class _HomeScreensState extends State<HomeScreens> {
                                   categoryName: 'Cate 1',
                                   Icons: Icons.dashboard,
                                 ),
-                                CategoryMenu(
-                                  categoryName: 'Cate 2',
-                                  Icons: Icons.dashboard,
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => PlaceScreen(),
+                                        ));
+                                  },
+                                  child: CategoryMenu(
+                                    categoryName: 'Places',
+                                    Icons: Icons.dashboard,
+                                  ),
                                 ),
                               ],
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -112,10 +124,32 @@ class _HomeScreensState extends State<HomeScreens> {
                         ),
                       ),
                     ),
+                    // Search
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 20),
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                color: Colors.indigo,
+                                strokeAlign: StrokeAlign.outside,
+                                width: 2)),
+                        child: TextField(
+                          style: TextStyle(fontSize: 18, color: Colors.indigo),
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.search),
+                              hintText: 'ຄົ້ນຫາ...',
+                              border: InputBorder.none),
+                        ),
+                      ),
+                    ),
                     //Image card session
                     Padding(
                       padding: const EdgeInsets.only(
-                          top: 20, left: 25, right: 25, bottom: 10),
+                          top: 0, left: 25, right: 25, bottom: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -128,34 +162,43 @@ class _HomeScreensState extends State<HomeScreens> {
                               color: Colors.black,
                             ),
                           ),
-                          ElevatedButton(
-                              onPressed: () {
+                          GestureDetector(
+                              onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => PlaceScreen()));
                               },
-                              child: Row(
-                                children: [
-                                  Text('See all'),
-                                  // Icon(
-                                  //   Icons.arrow_forward,
-                                  //   size: 16,
-                                  // )
-                                ],
-                              ))
+                              child: Text('See all')),
+                          // ElevatedButton(
+                          //     onPressed: () {
+                          //       Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //               builder: (context) => PlaceScreen()));
+                          //     },
+                          //     child: Row(
+                          //       children: [
+                          //         Text('See all'),
+                          //         // Icon(
+                          //         //   Icons.arrow_forward,
+                          //         //   size: 16,
+                          //         // )
+                          //       ],
+                          //     ))
                         ],
                       ),
                     ),
                     //Text description
-                    SizedBox(height: 2),
+                    // SizedBox(height: 2),
                     Container(
                       height: 600,
                       child: ListView.builder(
                         itemCount: popular.length,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
                             child: Column(
                               children: [
                                 GestureDetector(
@@ -167,7 +210,9 @@ class _HomeScreensState extends State<HomeScreens> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              PlacesDetailScreen(placeInfo: places[index],),
+                                              PlacesDetailScreen(
+                                            placeInfo: places[index],
+                                          ),
                                         ));
                                     print('Clicked on index $index');
                                   },

@@ -15,8 +15,8 @@ class PopularInfo {
 List popular = [
   PopularInfo(
     location: 'Laos',
-    image: 'assets/images/Thatluang.jpg',
-    name: 'ທາດຫຼວງ',
+    image: 'assets/images/Vat.jpg',
+    name: 'ນໍ້ຕົກຕາດກວາງຊີ',
     description: 'Thatluang is a patriarchy of the city of Laos',
     rating: '4.0'
   ),

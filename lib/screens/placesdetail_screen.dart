@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:happy_travel/models/place_model.dart';
+import 'package:happy_travel/screens/locationdetail_screen.dart';
 
 class PlacesDetailScreen extends StatefulWidget {
   const PlacesDetailScreen({super.key, required this.placeInfo});
@@ -74,13 +77,15 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Description',
+                                    'ລາຍລະອຽດ',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Text(
-                                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(widget.placeInfo.description),
                                 ],
                               ),
                             ),
@@ -88,60 +93,582 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                               height: 10,
                             ),
                             Text(
-                              'Other places',
+                              'ຮູບພາບປະກອບ',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Container(
                               height: 220,
                               width: double.infinity,
-                              // color: Colors.amber,
-                              child: ListView.builder(
+                              child: ListView(
                                 scrollDirection: Axis.horizontal,
-                                itemCount: 5,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return Row(
+                                children: [
+                                  Row(
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 10),
-                                        child: Stack(
-                                          children: [
-                                            Container(
-                                              height: 200,
-                                              width: 300,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.indigo,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                child: Image(
-                                                  image: AssetImage(
-                                                      'assets/images/Tv4.jpg'),
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width,
-                                                  height: 200,
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 200,
+                                          width: 300,
+                                          color: Colors.amber,
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.image1),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
-                                      )
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 200,
+                                          width: 300,
+                                          color: Colors.amber,
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.image2),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 200,
+                                          width: 300,
+                                          color: Colors.amber,
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.image3),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 200,
+                                          width: 300,
+                                          color: Colors.amber,
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.image4),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 200,
+                                          width: 300,
+                                          color: Colors.amber,
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.image5),
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
                                     ],
-                                  );
-                                },
+                                  ),
+                                ],
                               ),
+                              // color: Colors.amber,
+                              // child: ListView.builder(
+                              //   scrollDirection: Axis.horizontal,
+                              //   itemCount: 5,
+                              //   itemBuilder: (BuildContext context, int index) {
+                              //     return Row(
+                              //       children: [
+                              //         Padding(
+                              //           padding: const EdgeInsets.symmetric(
+                              //               horizontal: 10),
+                              //           child: Stack(
+                              //             children: [
+                              //               GestureDetector(
+                              //                 child: Container(
+                              //                   height: 200,
+                              //                   width: 300,
+                              //                   decoration: BoxDecoration(
+                              //                       color: Colors.indigo,
+                              //                       borderRadius:
+                              //                           BorderRadius.circular(
+                              //                               12)),
+                              //                   child: ClipRRect(
+                              //                     borderRadius:
+                              //                         BorderRadius.circular(12),
+                              //                     child: Image(
+                              //                       image: AssetImage(widget
+                              //                           .placeInfo.image1),
+                              //                       width:
+                              //                           MediaQuery.of(context)
+                              //                               .size
+                              //                               .width,
+                              //                       height: 200,
+                              //                       fit: BoxFit.cover,
+                              //                     ),
+                              //                   ),
+                              //                 ),
+                              //               ),
+                              //             ],
+                              //           ),
+                              //         )
+                              //       ],
+                              //     );
+                              //   },
+                              // ),
                             ),
                             SizedBox(
                               height: 10,
                             ),
+                            Text('ໂຮງແຮມ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade600,
+                                          spreadRadius: 1,
+                                          blurRadius: 5,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ]),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(12),
+                                              bottomLeft: Radius.circular(12)),
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.hotel1),
+                                            width: 150,
+                                            height: 150,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 150,
+                                        // width: MediaQuery.of(context).size.widt
+                                        width: 220,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(12),
+                                                bottomRight:
+                                                    Radius.circular(12))),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                widget.placeInfo.hname1,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('4.0'),
+                                                  Icon(
+                                                    Icons.star,
+                                                    color: Colors.amber,
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                  'Text about this hotel.Text about this hotel.'),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.indigo,
+                                                      ),
+                                                      Text(
+                                                        '0.00ມ',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.indigo),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    'ລາຄາ X00.000 K',
+                                                    style: TextStyle(
+                                                        color: Colors.indigo),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade600,
+                                          spreadRadius: 1,
+                                          blurRadius: 5,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ]),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(12),
+                                              bottomLeft: Radius.circular(12)),
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.hotel2),
+                                            width: 150,
+                                            height: 150,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 150,
+                                        // width: MediaQuery.of(context).size.widt
+                                        width: 220,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(12),
+                                                bottomRight:
+                                                    Radius.circular(12))),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                widget.placeInfo.hname2,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('4.0'),
+                                                  Icon(
+                                                    Icons.star,
+                                                    color: Colors.amber,
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                  'Text about this hotel.Text about this hotel.'),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.indigo,
+                                                      ),
+                                                      Text(
+                                                        '0.00ມ',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.indigo),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    'ລາຄາ X00.000 K',
+                                                    style: TextStyle(
+                                                        color: Colors.indigo),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
                             Text(
-                              'Location',
+                              'ຮ້ານອາຫານ',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade600,
+                                          spreadRadius: 1,
+                                          blurRadius: 5,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ]),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(12),
+                                              bottomLeft: Radius.circular(12)),
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.rest1),
+                                            width: 150,
+                                            height: 150,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 150,
+                                        // width: MediaQuery.of(context).size.widt
+                                        width: 220,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(12),
+                                                bottomRight:
+                                                    Radius.circular(12))),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                widget.placeInfo.rname1,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('4.0'),
+                                                  Icon(
+                                                    Icons.star,
+                                                    color: Colors.amber,
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                  'Text about this hotel.Text about this hotel.'),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.indigo,
+                                                      ),
+                                                      Text(
+                                                        '0.00ມ',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.indigo),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    'ລາຄາ X00.000 K',
+                                                    style: TextStyle(
+                                                        color: Colors.indigo),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.shade600,
+                                          spreadRadius: 1,
+                                          blurRadius: 5,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ]),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(12),
+                                              bottomLeft: Radius.circular(12)),
+                                          child: Image(
+                                            image: AssetImage(
+                                                widget.placeInfo.rest2),
+                                            width: 150,
+                                            height: 150,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 150,
+                                        // width: MediaQuery.of(context).size.widt
+                                        width: 220,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(12),
+                                                bottomRight:
+                                                    Radius.circular(12))),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                widget.placeInfo.rname2,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 16),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('4.0'),
+                                                  Icon(
+                                                    Icons.star,
+                                                    color: Colors.amber,
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                  'Text about this hotel.Text about this hotel.'),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        color: Colors.indigo,
+                                                      ),
+                                                      Text(
+                                                        '0.00ມ',
+                                                        style: TextStyle(
+                                                            color:
+                                                                Colors.indigo),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    'ລາຄາ X00.000 K',
+                                                    style: TextStyle(
+                                                        color: Colors.indigo),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'ແຜ່ນທີ່',
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
