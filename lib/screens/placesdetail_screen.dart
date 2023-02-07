@@ -78,6 +78,7 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                 children: [
                                   Text(
                                     'ລາຍລະອຽດ',
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
@@ -85,7 +86,7 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Text(widget.placeInfo.description),
+                                  Text(widget.placeInfo.description,),
                                 ],
                               ),
                             ),
@@ -284,60 +285,66 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                                     Radius.circular(12))),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                widget.placeInfo.hname1,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 16),
-                                              ),
-                                              Row(
+                                          child: SingleChildScrollView(
+                                            child: SingleChildScrollView(
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Text('4.0'),
-                                                  Icon(
-                                                    Icons.star,
-                                                    color: Colors.amber,
+                                                  Text(
+                                                    widget.placeInfo.hname1,
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 16),
                                                   ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                  'Text about this hotel.Text about this hotel.'),
-                                              SizedBox(
-                                                height: 15,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
                                                   Row(
                                                     children: [
+                                                      Text('4.0'),
                                                       Icon(
-                                                        Icons.location_on,
-                                                        color: Colors.indigo,
+                                                        Icons.star,
+                                                        color: Colors.amber,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(widget.placeInfo.data),
+                                                  SizedBox(
+                                                    height: 15,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons.location_on,
+                                                            color:
+                                                                Colors.indigo,
+                                                          ),
+                                                          Text(
+                                                            '0.00ມ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .indigo),
+                                                          )
+                                                        ],
                                                       ),
                                                       Text(
-                                                        '0.00ມ',
+                                                        'ລາຄາ X00.000 K',
                                                         style: TextStyle(
                                                             color:
                                                                 Colors.indigo),
                                                       )
                                                     ],
-                                                  ),
-                                                  Text(
-                                                    'ລາຄາ X00.000 K',
-                                                    style: TextStyle(
-                                                        color: Colors.indigo),
                                                   )
                                                 ],
-                                              )
-                                            ],
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       )
@@ -386,60 +393,62 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                                     Radius.circular(12))),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                widget.placeInfo.hname2,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 16),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('4.0'),
-                                                  Icon(
-                                                    Icons.star,
-                                                    color: Colors.amber,
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                  'Text about this hotel.Text about this hotel.'),
-                                              SizedBox(
-                                                height: 15,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons.location_on,
-                                                        color: Colors.indigo,
-                                                      ),
-                                                      Text(
-                                                        '0.00ມ',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.indigo),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Text(
-                                                    'ລາຄາ X00.000 K',
-                                                    style: TextStyle(
-                                                        color: Colors.indigo),
-                                                  )
-                                                ],
-                                              )
-                                            ],
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  widget.placeInfo.hname2,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16),
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text('4.0'),
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(widget.placeInfo.data),
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.location_on,
+                                                          color: Colors.indigo,
+                                                        ),
+                                                        Text(
+                                                          '0.00ມ',
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .indigo),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Text(
+                                                      'ລາຄາ X00.000 K',
+                                                      style: TextStyle(
+                                                          color: Colors.indigo),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       )
@@ -500,60 +509,62 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                                     Radius.circular(12))),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                widget.placeInfo.rname1,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 16),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('4.0'),
-                                                  Icon(
-                                                    Icons.star,
-                                                    color: Colors.amber,
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                  'Text about this hotel.Text about this hotel.'),
-                                              SizedBox(
-                                                height: 15,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons.location_on,
-                                                        color: Colors.indigo,
-                                                      ),
-                                                      Text(
-                                                        '0.00ມ',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.indigo),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Text(
-                                                    'ລາຄາ X00.000 K',
-                                                    style: TextStyle(
-                                                        color: Colors.indigo),
-                                                  )
-                                                ],
-                                              )
-                                            ],
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  widget.placeInfo.rname1,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16),
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text('4.0'),
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Text(widget.placeInfo.data),
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.location_on,
+                                                          color: Colors.indigo,
+                                                        ),
+                                                        Text(
+                                                          '0.00ມ',
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .indigo),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Text(
+                                                      'ລາຄາ X00.000 K',
+                                                      style: TextStyle(
+                                                          color: Colors.indigo),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       )
@@ -602,60 +613,62 @@ class _PlacesDetailScreenState extends State<PlacesDetailScreen> {
                                                     Radius.circular(12))),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                widget.placeInfo.rname2,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 16),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Text('4.0'),
-                                                  Icon(
-                                                    Icons.star,
-                                                    color: Colors.amber,
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                  'Text about this hotel.Text about this hotel.'),
-                                              SizedBox(
-                                                height: 15,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        Icons.location_on,
-                                                        color: Colors.indigo,
-                                                      ),
-                                                      Text(
-                                                        '0.00ມ',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.indigo),
-                                                      )
-                                                    ],
-                                                  ),
-                                                  Text(
-                                                    'ລາຄາ X00.000 K',
-                                                    style: TextStyle(
-                                                        color: Colors.indigo),
-                                                  )
-                                                ],
-                                              )
-                                            ],
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  widget.placeInfo.rname2,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16),
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Text('4.0'),
+                                                    Icon(
+                                                      Icons.star,
+                                                      color: Colors.amber,
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                               Text(widget.placeInfo.data),
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Icon(
+                                                          Icons.location_on,
+                                                          color: Colors.indigo,
+                                                        ),
+                                                        Text(
+                                                          '0.00ມ',
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .indigo),
+                                                        )
+                                                      ],
+                                                    ),
+                                                    Text(
+                                                      'ລາຄາ X00.000 K',
+                                                      style: TextStyle(
+                                                          color: Colors.indigo),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       )

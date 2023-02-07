@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:happy_travel/models/place_model.dart';
@@ -35,7 +35,9 @@ class PlaceScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PlacesDetailScreen(placeInfo: places[index],),
+                            builder: (context) => PlacesDetailScreen(
+                              placeInfo: places[index],
+                            ),
                           ));
                       print('Clicked on index $index');
                     },
@@ -66,7 +68,7 @@ class RecommendedCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Container(
-          height: 280,
+          height: 310,
           width: double.infinity,
           decoration: BoxDecoration(
               color: Color.fromARGB(255, 250, 250, 250),
@@ -128,11 +130,30 @@ class RecommendedCard extends StatelessWidget {
                       height: 5,
                     ),
                     Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.indigo,
+                        ),
+                        Text(
+                          placeInfo.location,
+                          style: TextStyle(color: Colors.indigo),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          placeInfo.description,
-                          style: TextStyle(fontSize: 12),
+                        Container(
+                          width: 300,
+                          child: Text(
+                            overflow: TextOverflow.ellipsis,
+                            placeInfo.description,
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ),
                       ],
                     ),

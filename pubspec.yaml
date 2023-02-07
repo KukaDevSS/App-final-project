@@ -89,7 +89,7 @@ flutter:
         - asset: assets/fonts/Pacifico-Regular.ttf
     - family: NotoSansLao
       fonts:
-        - asset: fonts/NotoSansLao-VariableFont_wdht.ttf
+        - asset: assets/fonts/NotoSansLao-VariableFont_wdht.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

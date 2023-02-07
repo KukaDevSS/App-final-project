@@ -15,17 +15,18 @@ class CategoryMenu extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           // border: Border.all(color: Colors.deepPurple)),
           // color: Colors.indigo[600],
-          border: Border.all(color: Colors.indigo, width: 2)),
+          // border: Border.all(color: Colors.indigo, width: 2)
+          color: Colors.indigo),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons,
-            color: Colors.indigo,
-          ),
+          // Icon(
+          //   Icons,
+          //   color: Colors.indigo,
+          // ),
           Text(
             categoryName,
-            style: TextStyle(color: Colors.indigo),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ],
       ),

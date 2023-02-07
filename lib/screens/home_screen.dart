@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:happy_travel/models/place_model.dart';
-import 'package:happy_travel/models/popular_model.dart';
+// import 'package:happy_travel/models/popular_model.dart';
 import 'package:happy_travel/screens/place_screen.dart';
 // import 'package:happy_travel/screens/place_screens.dart';
 import 'package:happy_travel/screens/placesdetail_screen.dart';
@@ -27,7 +27,10 @@ class _HomeScreensState extends State<HomeScreens> {
       drawer: DrawerSide(),
       appBar: AppBar(
         // shadowColor: Colors.black,
-        title: Text('ໜ້າຫຼັກ'),
+        title: Text(
+          'ໜ້າຫຼັກ',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         backgroundColor: Colors.indigo[600],
         // backgroundColor: Color.fromRGBO(134, 60, 208, 100),
@@ -88,8 +91,7 @@ class _HomeScreensState extends State<HomeScreens> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 CategoryMenu(
-                                  categoryName: 'Cate 1',
-                                  Icons: Icons.dashboard,
+                                  categoryName: 'No Function',
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -101,7 +103,6 @@ class _HomeScreensState extends State<HomeScreens> {
                                   },
                                   child: CategoryMenu(
                                     categoryName: 'Places',
-                                    Icons: Icons.dashboard,
                                   ),
                                 ),
                               ],
@@ -113,11 +114,11 @@ class _HomeScreensState extends State<HomeScreens> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 CategoryMenu(
-                                    categoryName: 'Cate 3',
-                                    Icons: Icons.dashboard),
+                                  categoryName: 'No Function',
+                                ),
                                 CategoryMenu(
-                                    categoryName: 'Cate 4',
-                                    Icons: Icons.dashboard),
+                                  categoryName: 'No Function',
+                                ),
                               ],
                             )
                           ],
@@ -132,13 +133,13 @@ class _HomeScreensState extends State<HomeScreens> {
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(50),
                             border: Border.all(
                                 color: Colors.indigo,
                                 strokeAlign: StrokeAlign.outside,
                                 width: 2)),
                         child: TextField(
-                          style: TextStyle(fontSize: 18, color: Colors.indigo),
+                          style: TextStyle(fontSize: 16, color: Colors.indigo),
                           decoration: InputDecoration(
                               prefixIcon: Icon(Icons.search),
                               hintText: 'ຄົ້ນຫາ...',
@@ -154,7 +155,7 @@ class _HomeScreensState extends State<HomeScreens> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Popular suggestion',
+                            'Suggest for you',
                             style: TextStyle(
                               // decoration: TextDecoration.underline,
                               fontSize: 16,
@@ -169,23 +170,7 @@ class _HomeScreensState extends State<HomeScreens> {
                                     MaterialPageRoute(
                                         builder: (context) => PlaceScreen()));
                               },
-                              child: Text('See all')),
-                          // ElevatedButton(
-                          //     onPressed: () {
-                          //       Navigator.push(
-                          //           context,
-                          //           MaterialPageRoute(
-                          //               builder: (context) => PlaceScreen()));
-                          //     },
-                          //     child: Row(
-                          //       children: [
-                          //         Text('See all'),
-                          //         // Icon(
-                          //         //   Icons.arrow_forward,
-                          //         //   size: 16,
-                          //         // )
-                          //       ],
-                          //     ))
+                              child: Text('View all')),
                         ],
                       ),
                     ),
@@ -194,7 +179,7 @@ class _HomeScreensState extends State<HomeScreens> {
                     Container(
                       height: 600,
                       child: ListView.builder(
-                        itemCount: popular.length,
+                        itemCount: 3,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(
@@ -203,7 +188,7 @@ class _HomeScreensState extends State<HomeScreens> {
                               children: [
                                 GestureDetector(
                                   child: RecommendedCard(
-                                    popularInfo: popular[index],
+                                    placeInfo: places[index],
                                   ),
                                   onTap: () {
                                     Navigator.push(
@@ -235,11 +220,11 @@ class _HomeScreensState extends State<HomeScreens> {
 }
 
 class RecommendedCard extends StatelessWidget {
-  final PopularInfo popularInfo;
+  final PlaceInfo placeInfo;
   // final VoidCallback press;
   const RecommendedCard({
     Key? key,
-    required this.popularInfo,
+    required this.placeInfo,
     // required this.press,
   }) : super(key: key);
 
@@ -250,7 +235,7 @@ class RecommendedCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
         child: Container(
-          height: 280,
+          height: 310,
           width: double.infinity,
           decoration: BoxDecoration(
               color: Color.fromARGB(255, 250, 250, 250),
@@ -271,7 +256,7 @@ class RecommendedCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ClipRRect(
                     child: Image(
-                      image: AssetImage(popularInfo.image),
+                      image: AssetImage(placeInfo.image),
                       width: MediaQuery.of(context).size.width,
                       height: 200,
                       fit: BoxFit.cover,
@@ -297,7 +282,7 @@ class RecommendedCard extends StatelessWidget {
                               color: Colors.amber,
                             ),
                             Text(
-                              popularInfo.name,
+                              placeInfo.name,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -305,7 +290,7 @@ class RecommendedCard extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              popularInfo.rating,
+                              placeInfo.rating,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Icon(
@@ -316,15 +301,31 @@ class RecommendedCard extends StatelessWidget {
                         ),
                       ],
                     ),
+                     SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.indigo,
+                        ),
+                        Text(placeInfo.location,style: TextStyle(color: Colors.indigo),),
+                      ],
+                    ),
                     SizedBox(
                       height: 5,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          popularInfo.description,
-                          style: TextStyle(fontSize: 12),
+                        Container(
+                          width: 300,
+                          child: Text(
+                            placeInfo.description,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ),
                       ],
                     ),

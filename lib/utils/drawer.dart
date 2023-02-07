@@ -27,7 +27,7 @@ class _DrawerSideState extends State<DrawerSide> {
                   style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'DancingScript',
-                      fontSize: 30,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -57,7 +57,7 @@ class _DrawerSideState extends State<DrawerSide> {
                 child: ListTile(
                   title: Text(
                     'Home',
-                    style: TextStyle(color: Colors.indigo[600]),
+                    style: TextStyle(color: Colors.indigo[600],fontWeight: FontWeight.bold),
                   ),
                   onTap: () {},
                   leading: Icon(
@@ -84,12 +84,12 @@ class _DrawerSideState extends State<DrawerSide> {
                     ]),
                 child: ListTile(
                   title: Text(
-                    'Home',
-                    style: TextStyle(color: Colors.indigo[600]),
+                    'Account',
+                    style: TextStyle(color: Colors.indigo[600],fontWeight: FontWeight.bold),
                   ),
                   onTap: () {},
                   leading: Icon(
-                    Icons.home,
+                    Icons.person,
                     color: Colors.indigo[600],
                   ),
                 ),
@@ -112,12 +112,12 @@ class _DrawerSideState extends State<DrawerSide> {
                     ]),
                 child: ListTile(
                   title: Text(
-                    'Home',
-                    style: TextStyle(color: Colors.indigo[600]),
+                    'Setting',
+                    style: TextStyle(color: Colors.indigo[600],fontWeight: FontWeight.bold),
                   ),
                   onTap: () {},
                   leading: Icon(
-                    Icons.home,
+                    Icons.settings,
                     color: Colors.indigo[600],
                   ),
                 ),
@@ -141,7 +141,7 @@ class _DrawerSideState extends State<DrawerSide> {
                 child: ListTile(
                   title: Text(
                     'Contact',
-                    style: TextStyle(color: Colors.indigo[600]),
+                    style: TextStyle(color: Colors.indigo[600],fontWeight: FontWeight.bold),
                   ),
                   onTap: () {
                     Navigator.push(
@@ -151,7 +151,7 @@ class _DrawerSideState extends State<DrawerSide> {
                         ));
                   },
                   leading: Icon(
-                    Icons.home,
+                    Icons.group,
                     color: Colors.indigo[600],
                   ),
                 ),
@@ -163,7 +163,7 @@ class _DrawerSideState extends State<DrawerSide> {
               children: [
                 Text(
                   'Version 1.0',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
                 )
               ],
             )

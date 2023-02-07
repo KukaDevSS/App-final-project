@@ -26,6 +26,7 @@ class PlaceInfo {
       // rname4,
       name,
       rating,
+      data,
       description;
 
   PlaceInfo({
@@ -53,17 +54,18 @@ class PlaceInfo {
     // required this.rest4,
     required this.rname1,
     required this.rname2,
+    required this.data
     // required this.rname3,
     // required this.rname4,
   });
 }
 
-List places = [
+List places = [ 
   PlaceInfo(
-    location: '',
+    location: 'ຫຼວງພະບາງ',
     image: 'assets/images/Vat.jpg',
     name: 'ວັດຊຽງທອງ',
-    description: 'Thatluang is a patriarchy of the city of Laos',
+    description: 'ວັດຊຽງທອງເປັນສະຖານທີ່ທ່ອງທ່ຽວທາງວັດທະນະທຳທີ່ໄດ້ຮັບຄວາມນິຍົມຫຼາຍ ເຊິີ່ງໄດ້ຕັ້ງຢູ່ໃນແຂວງຫຼວງພະບາງເມືອງມໍລະດົກໂລກທີ່ເຮົາຮູ້ຈັກກັນດີ.',
     rating: '5.0',
     image1: 'assets/images/VatXTH1.jpg',
     image2: 'assets/images/VatXTH2.jpg',
@@ -78,12 +80,13 @@ List places = [
     rest2: 'assets/images/noodlesoup.jpg',
     rname1: 'Viewpoint restaurant',
     rname2: 'Noodel Soup',
+    data: 'ຂໍ້ມູນຍັງບໍ່ພ້ອມໃຊ້ງານ'
   ),
   PlaceInfo(
-    location: '',
+    location: 'ຫຼວງພະບາງ',
     image: 'assets/images/TatKSI.jpg',
-    name: 'ນໍ້າຕົກຕາດກວາງຊີ',
-    description: 'Thatluang is a patriarchy of the city of Laos',
+    name: 'ຫຼວງພະບາງ',
+    description: 'ນໍ້າຕົກຕາດກວາງຊີເປັນແຫຼ່ງທ່ອງທ່ຽວມາງທຳມະຊາດທີ່ໄດ້ຮັບຄວາມນິຍົມຫຼາຍ ເຊິີ່ງໄດ້ຕັ້ງຢູ່ໃນແຂວງຫຼວງພະບາງເມືອງມໍລະດົກໂລກທີ່ເຮົາຮູ້ຈັກກັນດີ.',
     rating: '5.0',
     image1: 'assets/images/TatKSI1.jpg',
     image2: 'assets/images/TatKSI2.jpg',
@@ -98,12 +101,13 @@ List places = [
     rest2: 'assets/images/RKSI2.jpg',
     rname1: 'Carpe Diem',
     rname2: 'Nakhoun Cafe',
+    data: 'ຂໍ້ມູນຍັງບໍ່ພ້ອມໃຊ້ງານ'
   ),
   PlaceInfo(
-    location: '',
+    location: 'ນະຄອນຫຼວງວຽງຈັນ',
     image: 'assets/images/TATVT.jpg',
     name: 'ພຣະທາດຫຼວງວຽງຈັນ',
-    description: 'Thatluang is a patriarchy of the city of Laos',
+    description: 'ພຣະທາດຫຼວງວຽງຈັນເປັນສະຖານທີ່ໄທ່ອງທ່ຽວທາງດ້ານວັດທະນາທຳທີ່ໄດ້ຮັບຄວາມນິຍົມຫຼາຍ ແລະ ເປັນແລນມາກທີ່ທຸກຄົນຕ້ອງໄດ້ໄປ ເຊິີ່ງໄດ້ຕັ້ງຢູ່ໃນນະຄອນຫຼວງວຽງຈັນ.',
     rating: '5.0',
     image1: 'assets/images/TATVT1.jpg',
     image2: 'assets/images/TATVT2.jpg',
@@ -118,12 +122,13 @@ List places = [
     rest2: 'assets/images/RTATVT2.jpg',
     rname1: 'Metisse Restuarant',
     rname2: 'Doi Ka Noi Restuarant',
+    data: 'ຂໍ້ມູນຍັງບໍ່ພ້ອມໃຊ້ງານ'
   ),
   PlaceInfo(
-    location: '',
+    location: 'ນະຄອນຫຼວງວຽງຈັນ',
     image: 'assets/images/PTXVT.jpg',
     name: 'ປະຕູໄຊ',
-    description: 'Thatluang is a patriarchy of the city of Laos',
+    description: 'ປະຕູໄຊເປັນສະຖານທີ່ທ່ອງທ່ຽວທີ່ໄດ້ຮັບຄວາມນິຍົມຫຼາຍ ເຊິ່ງສາມາດຂຶ້ນໄປດ້ານເທິງຂອງອະນຸສາວະລີໄດ້ ເຊິີ່ງໄດ້ຕັ້ງຢູ່ໃນນະຄອນຫຼວງວຽງຈັນ.',
     rating: '5.0',
     image1: 'assets/images/PTXVT1.jpg',
     image2: 'assets/images/PTXVT2.jpg',
@@ -138,12 +143,13 @@ List places = [
     rest2: 'assets/images/RPXTVT2.jpg',
     rname1: 'Urdu Cafe',
     rname2: 'Tamnan Lao',
+    data: 'ຂໍ້ມູນຍັງບໍ່ພ້ອມໃຊ້ງານ'
   ),
   PlaceInfo(
-    location: '',
+    location: 'ນະຄອນຫຼວງວຽງຈັນ',
     image: 'assets/images/XKVT.jpg',
     name: 'ສວນວັດທະນາທຳຊຽງຄວນ',
-    description: 'Thatluang is a patriarchy of the city of Laos',
+    description: 'ສວນວັດທະນາທຳຊຽງຄວນເປັນສະຖານທີ່ທ່ອງທ່ຽວທາງວັດທະນາທຳທີ່ໄດ້ຮັບຄວາມນິຍົມຫຼາຍທີ່ປະກອບໄປດ້ວຍບູຮານຄະດີຈຳນວນຫຼສຍ ເຊິີ່ງໄດ້ຕັ້ງຢູ່ໃນນະຄອນຫຼວງວຽງຈັນ',
     rating: '5.0',
     image1: 'assets/images/XKVT1.jpg',
     image2: 'assets/images/XKVT2.jpg',
@@ -158,5 +164,6 @@ List places = [
     rest2: 'assets/images/HXKVT1.jpg',
     rname1: 'Null',
     rname2: 'Null',
+    data: 'ຂໍ້ມູນຍັງບໍ່ພ້ອມໃຊ້ງານ'
   ),
 ];
